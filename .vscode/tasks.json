@@ -1,0 +1,200 @@
+{
+    "version": "2.0.0",
+    "options": {
+        "env": {
+            "PATH": "${env:PATH}",
+            "WORKSPACE": "${workspaceFolder}"
+        }
+    },
+    "tasks": [
+        {
+            "label": "NRF Build Pristine",
+            "type": "process",
+            "command": "C:\\Users\\MichaelDesrosiers\\zephyrproject\\zephyr\\power_test\\scripts\\build-pristine.bat",
+            "group": {
+                "kind": "build",
+                "isDefault": false
+            },
+            "args": [
+                "adafruit_feather_nrf52840",
+            ],
+        },
+        {
+            "label": "NRFdk Build Auto",
+            "type": "process",
+            "command": "C:\\Users\\MichaelDesrosiers\\zephyrproject\\zephyr\\power_test\\scripts\\build-auto.bat",
+            "group": {
+                "kind": "build",
+                "isDefault": false
+            },
+            "args": [
+                "nrf52840dk/nrf52840",
+            ],
+        },
+        {
+            "label": "NRFdk Build Pristine",
+            "type": "process",
+            "command": "C:\\Users\\MichaelDesrosiers\\zephyrproject\\zephyr\\power_test\\scripts\\build-pristine.bat",
+            "group": {
+                "kind": "build",
+                "isDefault": false
+            },
+            "args": [
+                "nrf52840dk/nrf52840",
+            ],
+        },
+        {
+            "label": "NRF Build Auto",
+            "type": "process",
+            "command": "C:\\Users\\MichaelDesrosiers\\zephyrproject\\zephyr\\power_test\\scripts\\build-auto.bat",
+            "group": {
+                "kind": "build",
+                "isDefault": false
+            },
+            "args": [
+                "adafruit_feather_nrf52840",
+            ],
+        },
+        {
+            "label": "STM Build Pristine",
+            "type": "process",
+            "command": "C:\\Users\\MichaelDesrosiers\\zephyrproject\\zephyr\\power_test\\scripts\\build-pristine.bat",
+            "group": {
+                "kind": "build",
+                "isDefault": false
+            },
+            "args": [
+                "blackpill_f411ce",
+            ],
+        },
+        {
+            "label": "STM Build Auto",
+            "type": "process",
+            "command": "C:\\Users\\MichaelDesrosiers\\zephyrproject\\zephyr\\power_test\\scripts\\build-auto.bat",
+            "group": {
+                "kind": "build",
+                "isDefault": false
+            },
+            "args": [
+                "blackpill_f411ce",
+            ],
+        },
+        {
+            "label": "Nucleo Build Pristine",
+            "type": "process",
+            "command": "C:\\Users\\MichaelDesrosiers\\zephyrproject\\zephyr\\power_test\\scripts\\build-pristine.bat",
+            "group": {
+                "kind": "build",
+                "isDefault": false
+            },
+            "args": [
+                "nucleo_l476rg",
+            ],
+        },
+        {
+            "label": "Nucleo Build Auto",
+            "type": "process",
+            "command": "C:\\Users\\MichaelDesrosiers\\zephyrproject\\zephyr\\power_test\\scripts\\build-auto.bat",
+            "group": {
+                "kind": "build",
+                "isDefault": false
+            },
+            "args": [
+                "nucleo_l476rg",
+            ],
+        },
+        {
+            "label": "Lora Build Auto",
+            "type": "process",
+            "command": "C:\\Users\\MichaelDesrosiers\\zephyrproject\\zephyr\\power_test\\scripts\\build-auto.bat",
+            "group": {
+                "kind": "build",
+                "isDefault": false
+            },
+            "args": [
+                "olimex_lora_stm32wl_devkit@D",
+            ],
+        },
+        {
+            "label": "Lora Build Pristine",
+            "type": "process",
+            "command": "C:\\Users\\MichaelDesrosiers\\zephyrproject\\zephyr\\power_test\\scripts\\build-pristine.bat",
+            "group": {
+                "kind": "build",
+                "isDefault": false
+            },
+            "args": [
+                "olimex_lora_stm32wl_devkit@D",
+            ],
+        },
+        {
+            "label": "GUI Config",
+            "type": "process",
+            "command": "C:\\Users\\MichaelDesrosiers\\zephyrproject\\zephyr\\power_test\\scripts\\guiconfig.bat",
+            "group": {
+                "kind": "build",
+                "isDefault": false
+            }
+        },
+        {
+            "label": "Flash JLink",
+            "type": "process",
+            "command": "C:\\Users\\MichaelDesrosiers\\zephyrproject\\zephyr\\power_test\\scripts\\flash-jlink.bat",
+            "group": {
+                "kind": "build",
+                "isDefault": false
+            },
+            "args": [
+                "jlink"
+            ]
+        },
+        {
+            "label": "Flash STM32Cube",
+            "type": "process",
+            "command": "C:\\Users\\MichaelDesrosiers\\zephyrproject\\zephyr\\power_test\\scripts\\flash-jlink.bat",
+            "group": {
+                "kind": "build",
+                "isDefault": false
+            },
+            "args": [
+                "stm32cubeprogrammer"
+            ]
+        },
+        {
+            "label": "Flash PyOCD",
+            "type": "process",
+            "command": "C:\\Users\\MichaelDesrosiers\\zephyrproject\\zephyr\\power_test\\scripts\\flash-jlink.bat",
+            "group": {
+                "kind": "build",
+                "isDefault": false
+            },
+            "args": [
+                "pyocd"
+            ]
+        },
+        {
+            "label": "Monitor RTT",
+            "type": "process",
+            "command": "C:\\Users\\MichaelDesrosiers\\zephyrproject\\zephyr\\power_test\\scripts\\monitor.bat",
+            "group": {
+                "kind": "build",
+                "isDefault": false
+            },
+            "args": [
+                "pyocd"
+            ]
+        },
+        {
+            "label": "Resolve PC addr",
+            "type": "process",
+            "command": "C:\\Users\\MichaelDesrosiers\\zephyrproject\\zephyr\\power_test\\scripts\\resolve_addr.bat",
+            "group": {
+                "kind": "build",
+                "isDefault": false
+            },
+            "args": [
+                "nucleo_l476rg",
+            ],
+        },
+    ]
+}

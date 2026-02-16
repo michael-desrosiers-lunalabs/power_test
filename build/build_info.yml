@@ -1,0 +1,61 @@
+cmake:
+  application:
+    configuration-dir: 'C:/Users/MichaelDesrosiers/zephyrproject/zephyr/power_test'
+    source-dir: 'C:/Users/MichaelDesrosiers/zephyrproject/zephyr/power_test'
+  board:
+    name: 'nucleo_l476rg'
+    path:
+     - 'C:/Users/MichaelDesrosiers/zephyrproject/zephyr/boards/st/nucleo_l476rg'
+    qualifiers: 'stm32l476xx'
+    revision: ''
+  devicetree:
+    bindings-dirs:
+     - 'C:/Users/MichaelDesrosiers/zephyrproject/zephyr/dts/bindings'
+    files:
+     - 'C:/Users/MichaelDesrosiers/zephyrproject/zephyr/boards/st/nucleo_l476rg/nucleo_l476rg.dts'
+     - 'C:/Users/MichaelDesrosiers/zephyrproject/zephyr/power_test/boards/nucleo_l476rg.overlay'
+    include-dirs:
+     - 'C:/Users/MichaelDesrosiers/zephyrproject/modules/hal/ambiq/dts'
+     - 'C:/Users/MichaelDesrosiers/zephyrproject/modules/hal/atmel/include'
+     - 'C:/Users/MichaelDesrosiers/zephyrproject/modules/hal/bouffalolab/include'
+     - 'C:/Users/MichaelDesrosiers/zephyrproject/modules/hal/bouffalolab/include/zephyr'
+     - 'C:/Users/MichaelDesrosiers/zephyrproject/modules/hal/gigadevice/include'
+     - 'C:/Users/MichaelDesrosiers/zephyrproject/modules/hal/microchip/include'
+     - 'C:/Users/MichaelDesrosiers/zephyrproject/modules/hal/microchip/dts'
+     - 'C:/Users/MichaelDesrosiers/zephyrproject/modules/hal/nuvoton/dts'
+     - 'C:/Users/MichaelDesrosiers/zephyrproject/modules/hal/nxp/dts'
+     - 'C:/Users/MichaelDesrosiers/zephyrproject/modules/hal/stm32/dts'
+     - 'C:/Users/MichaelDesrosiers/zephyrproject/modules/hal/ti/dts'
+     - 'C:/Users/MichaelDesrosiers/zephyrproject/zephyr/include'
+     - 'C:/Users/MichaelDesrosiers/zephyrproject/zephyr/include/zephyr'
+     - 'C:/Users/MichaelDesrosiers/zephyrproject/zephyr/dts/common'
+     - 'C:/Users/MichaelDesrosiers/zephyrproject/zephyr/dts/vendor'
+     - 'C:/Users/MichaelDesrosiers/zephyrproject/zephyr/dts/rx'
+     - 'C:/Users/MichaelDesrosiers/zephyrproject/zephyr/dts/x86'
+     - 'C:/Users/MichaelDesrosiers/zephyrproject/zephyr/dts/xtensa'
+     - 'C:/Users/MichaelDesrosiers/zephyrproject/zephyr/dts/sparc'
+     - 'C:/Users/MichaelDesrosiers/zephyrproject/zephyr/dts/riscv'
+     - 'C:/Users/MichaelDesrosiers/zephyrproject/zephyr/dts/posix'
+     - 'C:/Users/MichaelDesrosiers/zephyrproject/zephyr/dts/arm64'
+     - 'C:/Users/MichaelDesrosiers/zephyrproject/zephyr/dts/arm'
+     - 'C:/Users/MichaelDesrosiers/zephyrproject/zephyr/dts/arc'
+     - 'C:/Users/MichaelDesrosiers/zephyrproject/zephyr/dts'
+    user-files:
+     - 'C:/Users/MichaelDesrosiers/zephyrproject/zephyr/power_test/boards/nucleo_l476rg.overlay'
+  kconfig:
+    files:
+     - 'C:/Users/MichaelDesrosiers/zephyrproject/zephyr/boards/st/nucleo_l476rg/nucleo_l476rg_defconfig'
+     - 'C:/Users/MichaelDesrosiers/zephyrproject/zephyr/power_test/prj.conf'
+    user-files:
+     - 'C:/Users/MichaelDesrosiers/zephyrproject/zephyr/power_test/prj.conf'
+  toolchain:
+    name: 'zephyr'
+    path: 'C:/Users/MichaelDesrosiers/zephyr-sdk-0.17.4'
+  zephyr:
+    version: '4.3.99'
+    zephyr-base: 'C:/Users/MichaelDesrosiers/zephyrproject/zephyr'
+version: '0.1.0'
+west:
+  command: 'C:\Users\MichaelDesrosiers\zephyrproject\.venv\Scripts\west build -p always -b nucleo_l476rg .'
+  topdir: 'C:\Users\MichaelDesrosiers\zephyrproject'
+  version: '1.5.0'

@@ -1,0 +1,86 @@
+// / {
+// 	chosen {
+// 		zephyr,console = &rtt;
+// 		zephyr,shell-uart = &rtt;
+// 	};
+// };
+
+/ {
+    leds {
+        compatible = "gpio-leds";
+
+        led0: led_0 {
+            gpios = <&gpio0 15 GPIO_ACTIVE_HIGH>;
+            label = "Red LED";
+        };
+    };
+};
+
+/ {
+    aliases {
+        de = &my_de;
+        nre = &my_nre;
+    };
+
+    leds {
+        compatible = "gpio-leds";
+
+        led0: led_0 {
+            gpios = <&gpio1 15 GPIO_ACTIVE_HIGH>;
+        };
+
+        my_de: my_de {
+            gpios = <&gpio0 28 GPIO_ACTIVE_HIGH>;
+        };
+
+        my_nre: my_nre {
+            gpios = <&gpio0 4 GPIO_ACTIVE_HIGH>; 
+        };	
+    };
+};
+
+&qspi {
+    status = "okay";
+    pinctrl-0 = <&qspi_default>;
+    pinctrl-1 = <&qspi_sleep>;
+    pinctrl-names = "default", "sleep";
+
+    gd25q16: gd25q16@0 {
+        compatible = "nordic,qspi-nor";
+        reg = <0>;
+        writeoc = "pp4o";
+        readoc = "read4io";
+        sck-frequency = <16000000>;
+        jedec-id = [ef 40 15];
+        size = <16777216>;
+        has-dpd;
+        t-enter-dpd = <20000>;
+        t-exit-dpd = <20000>;
+        quad-enable-requirements = "S2B1v1";
+    };
+};
+
+&radio {
+    status = "disabled";
+};
+
+&i2c0 {
+    status = "disabled";  
+};
+
+&i2c1 {
+    status = "disabled";  
+};
+
+&adc {
+    status = "disabled";  
+};
+
+&usbd {
+    status = "disabled";  
+};
+
+&uart0 {
+    status = "disabled";  
+};
+

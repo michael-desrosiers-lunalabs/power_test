@@ -1,0 +1,103 @@
+// See also: blackpill_f411ce.dts
+
+/* enable USART1 for rs485 communications */
+&usart1 {
+     status = "disabled";
+     current-speed = <115200>;
+     pinctrl-0 = <&usart1_tx_pa15 &usart1_rx_pb3>;
+     pinctrl-names = "default"; 
+};
+
+&usart2 {
+     status = "disabled";
+     current-speed = <115200>;
+     pinctrl-0 = <&usart2_tx_pa2 &usart2_rx_pa3>;
+     pinctrl-names = "default";
+};
+
+&usart6 {
+     status = "disabled";
+     current-speed = <115200>;
+     pinctrl-0 = <&usart6_tx_pa11 &usart6_rx_pa12>;
+     pinctrl-names = "default";
+};
+
+/ {
+     aliases {
+          serial-modem = &usart2;
+          serial-console = &usart1;
+     };
+};
+
+/ {
+     rtt0: rtt_chan0 {
+          compatible = "segger,rtt-uart";
+          zephyr,pm-device-runtime-auto;
+     };
+
+     chosen {
+          zephyr,console = &rtt0;
+     };
+};
+
+/// {
+//	chosen {
+//		zephyr,console = &usart6;
+//		zephyr,shell-uart = &usart6;
+//	};
+//};
+//
+/// {
+//	chosen {
+//		zephyr,console = &cdc_acm_uart0;
+//		zephyr,shell-uart = &cdc_acm_uart0;
+//	};
+//};
+//
+//
+//
+//&zephyr_udc0 {
+//	cdc_acm_uart0: cdc_acm_uart0 {
+//		compatible = "zephyr,cdc-acm-uart";
+//	};
+//};
+
+&adc1 {
+     status = "disabled";
+};
+
+&i2c1 {
+     status = "disabled";
+};
+
+&i2c2 {
+     status = "disabled";
+};
+
+&i2c3 {
+     status = "disabled";
+};
+
+&usbotg_fs {
+     status = "disabled";
+};
+
+&spi1 {
+     status = "disabled";
+};
+
+&spi2 {
+     status = "disabled";
+};
+
+&spi3 {
+     status = "disabled";
+};
+
+&spi4 {
+     status = "disabled";
+};
+
+&spi5 {
+     status = "disabled";
+};

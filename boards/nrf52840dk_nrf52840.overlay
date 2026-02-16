@@ -1,0 +1,25 @@
+&uart0 {
+    status = "disabled";
+    //  current-speed = <115200>;
+    //  pinctrl-0 = <&usart1_tx_pa15 &usart1_rx_pb3>;
+    //  pinctrl-names = "default"; 
+};
+
+/ {
+    aliases {
+        de = &my_de;
+        nre = &my_nre;
+    };
+
+    leds {
+        compatible = "gpio-leds";
+
+        my_de: my_de {
+            gpios = <&gpio0 28 GPIO_ACTIVE_HIGH>; 
+        };
+
+        my_nre: my_nre {
+            gpios = <&gpio0 4 GPIO_ACTIVE_HIGH>;  
+        };	
+    };
+};

@@ -1,0 +1,103 @@
+// see C:\Users\MichaelDesrosiers\zephyrproject\zephyr\boards\st\nucleo_l552ze_q\nucleo_l552ze_q-common.dtsi
+
+/ {
+    aliases {
+        de = &my_de;
+        nre = &my_nre;
+        user-led = &my_led;
+    };
+
+    leds {
+        compatible = "gpio-leds";
+
+        my_de: my_de {
+            gpios = <&gpiob 13 GPIO_ACTIVE_HIGH>; 
+        };
+
+        my_nre: my_nre {
+            gpios = <&gpiob 14 GPIO_ACTIVE_HIGH>;  
+        };
+        
+        my_led: my_led {
+            gpios = <&gpiob 13 GPIO_ACTIVE_HIGH>;  
+        };
+    };
+};
+
+&usart1 {
+    status = "okay";
+    current-speed = <115200>;
+    pinctrl-0 = <&usart1_tx_pa9 &usart1_rx_pa10>;
+    pinctrl-names = "default"; 
+};
+
+// &usart2 {
+//     status = "okay";
+//     current-speed = <115200>;
+//     pinctrl-0 = <&usart2_tx_pa2 &usart2_rx_pa3>;
+//     pinctrl-names = "default";
+// };
+
+&usart3 {
+    status = "okay";
+    current-speed = <500000>;
+    pinctrl-0 = <&usart3_tx_pc10 &usart3_rx_pc11>;
+    pinctrl-names = "default";
+};
+
+/ {
+    chosen {
+        //zephyr,console = &cdc_acm_uart0;
+        zephyr,console = &usart3;
+        zephyr,shell-uart = &usart3;
+        uart,atmodem = &usart1;
+        // uart-rs485 = &usart2;
+    };
+};
+
+&spi3 {
+    status = "disabled";
+};
+
+&spi1 {
+    pinctrl-0 = <&spi1_sck_pa5 &spi1_miso_pa6 &spi1_mosi_pa7>;
+    pinctrl-names = "default";
+    cs-gpios = <&gpiob 6 GPIO_ACTIVE_LOW>;
+
+    status = "okay";
+
+    w25q128_spi: spi-nor-flash@0 {
+        compatible = "jedec,spi-nor";
+        reg = <0>;
+        spi-max-frequency = <24000000>;
+        size = <0x01000000>;    /* 128 Mbit = 16 MByte */
+        status = "okay";
+        jedec-id = [ef 40 18];
+        has-dpd;
+        t-enter-dpd = <30000>;  /* ns */
+        t-exit-dpd = <30000>;   /* ns */
+
+        partitions {
+            compatible = "fixed-partitions";
+            #address-cells = <1>;
+            #size-cells = <1>;
+
+            ext_storage_partition: partition@0 {
+                label = "external_storage";
+                reg = <0x00000000 0x01000000>;
+            };
+        };
+    };
+};
+
+/ {
+    aliases {
+        external-flash = &w25q128_spi;
+    };
+};
+
+// / {
+//     aliases {
+//         /delete-property/ led0;
+//     };
+// };

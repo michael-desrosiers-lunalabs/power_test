@@ -1,0 +1,83 @@
+// See also: olimex_lora_stm32wl_devkit.dts
+//	stm32wle5jcix-pinctrl.dtsi
+&usart1 {
+	pinctrl-0 = <&usart1_tx_pb6 &usart1_rx_pb7>;
+	pinctrl-names = "default";
+	current-speed = <115200>;
+	status = "okay";
+};
+
+&usart2 {
+	status = "okay";
+	current-speed = <115200>;
+	pinctrl-0 = <&usart2_tx_pa2 &usart2_rx_pa3>;
+	pinctrl-names = "default";
+};
+
+/ {
+	aliases {
+		serial-modem = &usart1;
+		stm32-lp-tick-source = &lptim1;
+		de = &my_de;
+		nre = &my_nre;
+	};
+
+	chosen {
+		zephyr,console = &usart2;
+	};
+
+	leds {
+		compatible = "gpio-leds";
+
+		my_de: my_de {
+			gpios = <&gpioa 6 GPIO_ACTIVE_HIGH>;
+		};
+
+		my_nre: my_nre {
+			gpios = <&gpiob 12 GPIO_ACTIVE_HIGH>;
+		};	
+	};
+};
+
+&spi1 {
+	pinctrl-0 = <&spi1_sck_pa5 &spi1_miso_pa11 &spi1_mosi_pa7>;
+	pinctrl-names = "default";
+	cs-gpios = <&gpioa 4 GPIO_ACTIVE_LOW>;
+
+	status = "okay";
+
+	w25q64_spi: spi-nor-flash@0 {
+		compatible = "jedec,spi-nor";
+		reg = <0>;
+		spi-max-frequency = <24000000>;
+		size = <0x01000000>; /* 128 Mbit = 16 MByte */
+		status = "okay";
+		jedec-id = [ef 40 18];
+		has-dpd;
+		t-enter-dpd = <3500>;
+		t-exit-dpd = <3500>;
+
+		partitions {
+			compatible = "fixed-partitions";
+			#address-cells = <1>;
+			#size-cells = <1>;
+
+			ext_storage_partition: partition@0 {
+				label = "external_storage";
+				reg = <0x00000000 0x01000000>; /* Full 128 MBit = 16 MByte */
+			};
+		};
+	};
+};
+
+&lptim1 {
+	status = "okay";
+	/* Use a prescaler of 32 to allow for longer sleep durations 
+	 * (up to 64 seconds) at the cost of some tick precision
+	 */
+	st,prescaler = <32>;
+};
+
+&subghzspi {
+	status = "disabled";
+};
