@@ -44,6 +44,30 @@
             ],
         },
         {
+            "label": "NRF54dk Build Auto",
+            "type": "process",
+            "command": "C:\\Users\\MichaelDesrosiers\\zephyrproject\\zephyr\\power_test\\scripts\\build-auto.bat",
+            "group": {
+                "kind": "build",
+                "isDefault": false
+            },
+            "args": [
+                "nrf54l15dk/nrf54l15/cpuapp",
+            ],
+        },
+        {
+            "label": "NRF54dk Build Pristine",
+            "type": "process",
+            "command": "C:\\Users\\MichaelDesrosiers\\zephyrproject\\zephyr\\power_test\\scripts\\build-pristine.bat",
+            "group": {
+                "kind": "build",
+                "isDefault": false
+            },
+            "args": [
+                "nrf54l15dk/nrf54l15/cpuapp",
+            ],
+        },
+        {
             "label": "NRF Build Auto",
             "type": "process",
             "command": "C:\\Users\\MichaelDesrosiers\\zephyrproject\\zephyr\\power_test\\scripts\\build-auto.bat",

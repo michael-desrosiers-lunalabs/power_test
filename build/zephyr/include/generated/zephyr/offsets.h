@@ -13,8 +13,7 @@
 #define ___cpu_t_irq_stack_OFFSET 0x4
 #define ___cpu_t_arch_OFFSET 0x11
 #define ___kernel_t_cpus_OFFSET 0x0
-#define ___kernel_t_idle_OFFSET 0x14
-#define ___kernel_t_ready_q_OFFSET 0x18
+#define ___kernel_t_ready_q_OFFSET 0x14
 #define ___ready_q_t_cache_OFFSET 0x0
 #define ___thread_base_t_user_options_OFFSET 0xc
 #define ___thread_t_base_OFFSET 0x0
@@ -22,9 +21,9 @@
 #define ___thread_t_arch_OFFSET 0x84
 #define ___thread_t_stack_info_OFFSET 0x70
 #define ___thread_t_tls_OFFSET 0x80
-#define __z_interrupt_stack_SIZEOF 0x2040
-#define __z_interrupt_all_stacks_SIZEOF 0x2040
-#define _DEVICE_STRUCT_PM_OFFSET 0x1c
+#define __z_interrupt_stack_SIZEOF 0x2000
+#define __z_interrupt_all_stacks_SIZEOF 0x2000
+#define _DEVICE_STRUCT_PM_OFFSET 0x20
 #define _PM_DEVICE_STRUCT_FLAGS_OFFSET 0x0
 #define ___thread_arch_t_basepri_OFFSET 0x0
 #define ___thread_arch_t_swap_return_value_OFFSET 0x4

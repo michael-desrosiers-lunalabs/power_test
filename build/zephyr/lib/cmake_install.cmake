@@ -64,11 +64,6 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/Users/MichaelDesrosiers/zephyrproject/zephyr/power_test/build/zephyr/lib/midi2/cmake_install.cmake")
-endif()
-
-if(NOT CMAKE_INSTALL_LOCAL_ONLY)
-  # Include the install script for the subdirectory.
   include("C:/Users/MichaelDesrosiers/zephyrproject/zephyr/power_test/build/zephyr/lib/os/cmake_install.cmake")
 endif()
 

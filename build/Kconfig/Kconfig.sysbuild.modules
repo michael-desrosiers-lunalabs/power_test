@@ -64,9 +64,6 @@ config ZEPHYR_OPENISA_MODULE
 config ZEPHYR_QUICKLOGIC_MODULE
    bool
    default y
-config ZEPHYR_HAL_REALTEK_MODULE
-   bool
-   default y
 config ZEPHYR_HAL_RENESAS_MODULE
    bool
    default y

@@ -1,2 +1,2 @@
 # Load Zephyr board defconfig descriptions.
-osource "C:/Users/MichaelDesrosiers/zephyrproject/zephyr/boards/st/nucleo_l476rg/Kconfig.defconfig"
+osource "C:/Users/MichaelDesrosiers/zephyrproject/zephyr/boards/nordic/nrf54l15dk/Kconfig.defconfig"

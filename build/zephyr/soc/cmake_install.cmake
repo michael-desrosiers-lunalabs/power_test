@@ -44,7 +44,7 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/Users/MichaelDesrosiers/zephyrproject/zephyr/power_test/build/zephyr/soc/soc/stm32l476xx/cmake_install.cmake")
+  include("C:/Users/MichaelDesrosiers/zephyrproject/zephyr/power_test/build/zephyr/soc/soc/nrf54l15/cmake_install.cmake")
 endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT

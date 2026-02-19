@@ -24,10 +24,10 @@ APPLICATION_CONFIG_DIR:PATH=C:/Users/MichaelDesrosiers/zephyrproject/zephyr/powe
 APPLICATION_SOURCE_DIR:PATH=C:/Users/MichaelDesrosiers/zephyrproject/zephyr/power_test
 
 //Selected board
-BOARD:STRING=nucleo_l476rg
+BOARD:STRING=nrf54l15dk/nrf54l15/cpuapp
 
-//Main board directory for board (nucleo_l476rg)
-BOARD_DIR:PATH=C:/Users/MichaelDesrosiers/zephyrproject/zephyr/boards/st/nucleo_l476rg
+//Main board directory for board (nrf54l15dk)
+BOARD_DIR:PATH=C:/Users/MichaelDesrosiers/zephyrproject/zephyr/boards/nordic/nrf54l15dk
 
 //Support board extensions
 BOARD_EXTENSIONS:BOOL=ON
@@ -45,7 +45,7 @@ BYPRODUCT_KERNEL_ELF_NAME:FILEPATH=C:/Users/MichaelDesrosiers/zephyrproject/zeph
 BYPRODUCT_KERNEL_HEX_NAME:FILEPATH=C:/Users/MichaelDesrosiers/zephyrproject/zephyr/power_test/build/zephyr/zephyr.hex
 
 //Selected board
-CACHED_BOARD:STRING=nucleo_l476rg
+CACHED_BOARD:STRING=nrf54l15dk/nrf54l15/cpuapp
 
 //Selected shield
 CACHED_SHIELD:STRING=
@@ -124,8 +124,8 @@ CMAKE_CXX_FLAGS_RELEASE:STRING=-O3 -DNDEBUG
 //Flags used by the CXX compiler during RELWITHDEBINFO builds.
 CMAKE_CXX_FLAGS_RELWITHDEBINFO:STRING=-O2 -g -DNDEBUG
 
-//Path to a program.
-CMAKE_C_COMPILER:FILEPATH=C:/Users/MichaelDesrosiers/zephyr-sdk-0.17.4/arm-zephyr-eabi/bin/arm-zephyr-eabi-gcc.exe
+//C compiler
+CMAKE_C_COMPILER:STRING=C:/Users/MichaelDesrosiers/zephyr-sdk-0.17.4/arm-zephyr-eabi/bin/arm-zephyr-eabi-gcc.exe
 
 //A wrapper around 'ar' adding the appropriate '--plugin' option
 // for the GCC compiler
@@ -182,10 +182,7 @@ CMAKE_FIND_PACKAGE_REDIRECTS_DIR:STATIC=C:/Users/MichaelDesrosiers/zephyrproject
 CMAKE_GCOV:FILEPATH=C:/Users/MichaelDesrosiers/zephyr-sdk-0.17.4/aarch64-zephyr-elf/bin/aarch64-zephyr-elf-gcov.exe
 
 //Path to a program.
-CMAKE_GDB:FILEPATH=C:/Users/MichaelDesrosiers/zephyr-sdk-0.17.4/arm-zephyr-eabi/bin/arm-zephyr-eabi-gdb.exe
-
-//Path to a program.
-CMAKE_GDB_NO_PY:FILEPATH=C:/Users/MichaelDesrosiers/zephyr-sdk-0.17.4/arm-zephyr-eabi/bin/arm-zephyr-eabi-gdb.exe
+CMAKE_GDB:FILEPATH=C:/Users/MichaelDesrosiers/zephyr-sdk-0.17.4/arm-zephyr-eabi/bin/arm-zephyr-eabi-gdb-py.exe
 
 //Install path prefix, prepended onto install directories.
 CMAKE_INSTALL_PREFIX:PATH=C:/Program Files (x86)/Zephyr-Kernel
@@ -235,19 +232,16 @@ CMAKE_PROJECT_HOMEPAGE_URL:STATIC=
 CMAKE_PROJECT_NAME:STATIC=NONE
 
 //Value Computed by CMake
-CMAKE_PROJECT_SPDX_LICENSE:STATIC=
+CMAKE_PROJECT_VERSION:STATIC=
 
 //Value Computed by CMake
-CMAKE_PROJECT_VERSION:STATIC=4.3.99
+CMAKE_PROJECT_VERSION_MAJOR:STATIC=
 
 //Value Computed by CMake
-CMAKE_PROJECT_VERSION_MAJOR:STATIC=4
+CMAKE_PROJECT_VERSION_MINOR:STATIC=
 
 //Value Computed by CMake
-CMAKE_PROJECT_VERSION_MINOR:STATIC=3
-
-//Value Computed by CMake
-CMAKE_PROJECT_VERSION_PATCH:STATIC=99
+CMAKE_PROJECT_VERSION_PATCH:STATIC=
 
 //Value Computed by CMake
 CMAKE_PROJECT_VERSION_TWEAK:STATIC=
@@ -334,7 +328,7 @@ DTC:FILEPATH=C:/Users/MichaelDesrosiers/AppData/Local/Microsoft/WinGet/Packages/
 // parameter. These settings will override the settings in the
 // board's .dts file. Multiple files may be listed, e.g. DTC_OVERLAY_FILE="dts1.overlay
 // dts2.overlay"
-DTC_OVERLAY_FILE:STRING=C:/Users/MichaelDesrosiers/zephyrproject/zephyr/power_test/boards/nucleo_l476rg.overlay
+DTC_OVERLAY_FILE:STRING=C:/Users/MichaelDesrosiers/zephyrproject/zephyr/power_test/boards/nrf54l15dk_nrf54l15_cpuapp.overlay
 
 //Path to a program.
 GEN_KOBJECT_LIST:FILEPATH=C:/Users/MichaelDesrosiers/zephyrproject/zephyr/scripts/build/gen_kobject_list.py
@@ -360,6 +354,9 @@ NONE_IS_TOP_LEVEL:STATIC=ON
 //Value Computed by CMake
 NONE_SOURCE_DIR:STATIC=C:/Users/MichaelDesrosiers/zephyrproject/zephyr/power_test
 
+//nrfx Directory
+NRFX_DIR:PATH=C:/Users/MichaelDesrosiers/zephyrproject/modules/hal/nordic/nrfx
+
 //Path to a program.
 OPENOCD:FILEPATH=OPENOCD-NOTFOUND
 
@@ -367,7 +364,7 @@ OPENOCD:FILEPATH=OPENOCD-NOTFOUND
 PAHOLE:FILEPATH=PAHOLE-NOTFOUND
 
 //Path to a program.
-PTY_INTERFACE:FILEPATH=PTY_INTERFACE-NOTFOUND
+PTY_INTERFACE:FILEPATH=C:/Program Files/Git/usr/bin/winpty.exe
 
 //Path to a program.
 PUNCOVER:FILEPATH=PUNCOVER-NOTFOUND
@@ -382,7 +379,10 @@ Picolibc_IS_TOP_LEVEL:STATIC=OFF
 Picolibc_SOURCE_DIR:STATIC=C:/Users/MichaelDesrosiers/zephyrproject/modules/lib/picolibc
 
 //Path to the SoC directory.
-SOC_FULL_DIR:PATH=C:/Users/MichaelDesrosiers/zephyrproject/zephyr/soc/st/stm32
+SOC_FULL_DIR:PATH=C:/Users/MichaelDesrosiers/zephyrproject/zephyr/soc/nordic
+
+//Path to a CMSIS-SVD file
+SOC_SVD_FILE:FILEPATH=C:/Users/MichaelDesrosiers/zephyrproject/modules/hal/nordic/nrfx/mdk/nrf54l15_application.svd
 
 //True if toolchain supports newlib
 TOOLCHAIN_HAS_NEWLIB:BOOL=ON
@@ -434,8 +434,8 @@ Zephyr_DIR:PATH=C:/Users/MichaelDesrosiers/zephyrproject/zephyr/share/zephyr-pac
 # INTERNAL cache entries
 ########################
 
-//List of board directories for board (nucleo_l476rg)
-BOARD_DIRECTORIES:INTERNAL=C:/Users/MichaelDesrosiers/zephyrproject/zephyr/boards/st/nucleo_l476rg
+//List of board directories for board (nrf54l15dk)
+BOARD_DIRECTORIES:INTERNAL=C:/Users/MichaelDesrosiers/zephyrproject/zephyr/boards/nordic/nrf54l15dk
 //DT bindings root directories
 CACHED_DTS_ROOT_BINDINGS:INTERNAL=C:/Users/MichaelDesrosiers/zephyrproject/zephyr/dts/bindings
 //ADVANCED property for variable: CMAKE_ADDR2LINE
@@ -464,7 +464,7 @@ CMAKE_CACHEFILE_DIR:INTERNAL=c:/Users/MichaelDesrosiers/zephyrproject/zephyr/pow
 //Major version of cmake used to create the current loaded cache
 CMAKE_CACHE_MAJOR_VERSION:INTERNAL=4
 //Minor version of cmake used to create the current loaded cache
-CMAKE_CACHE_MINOR_VERSION:INTERNAL=2
+CMAKE_CACHE_MINOR_VERSION:INTERNAL=1
 //Patch version of cmake used to create the current loaded cache
 CMAKE_CACHE_PATCH_VERSION:INTERNAL=1
 //Path to CMake executable.
@@ -489,6 +489,8 @@ CMAKE_CXX_FLAGS_MINSIZEREL-ADVANCED:INTERNAL=1
 CMAKE_CXX_FLAGS_RELEASE-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_CXX_FLAGS_RELWITHDEBINFO
 CMAKE_CXX_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CMAKE_C_COMPILER
+CMAKE_C_COMPILER-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_C_COMPILER_AR
 CMAKE_C_COMPILER_AR-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_C_COMPILER_RANLIB
@@ -551,7 +553,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=160
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=159
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP
@@ -563,7 +565,7 @@ CMAKE_RANLIB-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_READELF
 CMAKE_READELF-ADVANCED:INTERNAL=1
 //Path to CMake installation.
-CMAKE_ROOT:INTERNAL=C:/Program Files/CMake/share/cmake-4.2
+CMAKE_ROOT:INTERNAL=C:/Program Files/CMake/share/cmake-4.1
 //ADVANCED property for variable: CMAKE_SHARED_LINKER_FLAGS
 CMAKE_SHARED_LINKER_FLAGS-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_SHARED_LINKER_FLAGS_DEBUG
@@ -599,14 +601,15 @@ FIND_PACKAGE_MESSAGE_DETAILS_Dtc:INTERNAL=[C:/Users/MichaelDesrosiers/AppData/Lo
 //Details about finding GnuLd
 FIND_PACKAGE_MESSAGE_DETAILS_GnuLd:INTERNAL=[c:/users/michaeldesrosiers/zephyr-sdk-0.17.4/arm-zephyr-eabi/arm-zephyr-eabi/bin/ld.bfd.exe][v2.38()]
 //Details about finding Python3
-FIND_PACKAGE_MESSAGE_DETAILS_Python3:INTERNAL=[C:/Users/MichaelDesrosiers/zephyrproject/.venv/Scripts/python.exe][found components: Interpreter ][v3.10.11(3.10)]
+FIND_PACKAGE_MESSAGE_DETAILS_Python3:INTERNAL=[C:/Users/MichaelDesrosiers/zephyrproject/.venv/Scripts/python.exe][found components: Interpreter ][v3.10.4(3.10)]
 //Zephyr hardware model version
 HWM:INTERNAL=v2
 //Zephyr hardware model
 HWMv2:INTERNAL=True
 KERNEL_META_PATH:INTERNAL=C:/Users/MichaelDesrosiers/zephyrproject/zephyr/power_test/build/zephyr/zephyr.meta
-//List of SoC directories for SoC (stm32l476xx)
-SOC_DIRECTORIES:INTERNAL=C:/Users/MichaelDesrosiers/zephyrproject/zephyr/soc/st/stm32
+//List of SoC directories for SoC (nrf54l15)
+SOC_DIRECTORIES:INTERNAL=C:/Users/MichaelDesrosiers/zephyrproject/zephyr/soc/nordic
+//SoC Linker script
 SOC_LINKER_SCRIPT:INTERNAL=C:/Users/MichaelDesrosiers/zephyrproject/zephyr/include/zephyr/arch/arm/cortex_m/scripts/linker.ld
 //West
 WEST:INTERNAL=C:/Users/MichaelDesrosiers/zephyrproject/.venv/Scripts/python.exe;-m;west
@@ -618,10 +621,8 @@ _Python3_EXECUTABLE:INTERNAL=C:/Users/MichaelDesrosiers/zephyrproject/.venv/Scri
 //Path to a program.
 _Python3_EXECUTABLE_DEBUG:INTERNAL=_Python3_EXECUTABLE_DEBUG-NOTFOUND
 //Python3 Properties
-_Python3_INTERPRETER_PROPERTIES:INTERNAL=Python;3;10;11;64;<none>;cp310-win_amd64.pyd;;C:\Users\MichaelDesrosiers\AppData\Local\Python\pythoncore-3.10-64\Lib;C:\Users\MichaelDesrosiers\zephyrproject\.venv\Lib;C:\Users\MichaelDesrosiers\zephyrproject\.venv\Lib\site-packages;C:\Users\MichaelDesrosiers\zephyrproject\.venv\Lib\site-packages
+_Python3_INTERPRETER_PROPERTIES:INTERNAL=Python;3;10;4;64;<none>;cp310-win_amd64.pyd;;C:\Users\MichaelDesrosiers\AppData\Local\Programs\Python\Python310\Lib;C:\Users\MichaelDesrosiers\zephyrproject\.venv\Lib;C:\Users\MichaelDesrosiers\zephyrproject\.venv\Lib\site-packages;C:\Users\MichaelDesrosiers\zephyrproject\.venv\Lib\site-packages
 _Python3_INTERPRETER_SIGNATURE:INTERNAL=a9101e7f27cc6117b6d39001aa6dc4f0
-//Interpreter reason failure
-_Python3_Interpreter_REASON_FAILURE:INTERNAL=
 //NumPy reason failure
 _Python3_NumPy_REASON_FAILURE:INTERNAL=
 

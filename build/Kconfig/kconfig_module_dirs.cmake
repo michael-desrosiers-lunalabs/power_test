@@ -21,7 +21,6 @@ list(APPEND kconfig_env_dirs ZEPHYR_NUVOTON_MODULE_DIR=C:/Users/MichaelDesrosier
 list(APPEND kconfig_env_dirs ZEPHYR_HAL_NXP_MODULE_DIR=C:/Users/MichaelDesrosiers/zephyrproject/modules/hal/nxp)
 list(APPEND kconfig_env_dirs ZEPHYR_OPENISA_MODULE_DIR=C:/Users/MichaelDesrosiers/zephyrproject/modules/hal/openisa)
 list(APPEND kconfig_env_dirs ZEPHYR_QUICKLOGIC_MODULE_DIR=C:/Users/MichaelDesrosiers/zephyrproject/modules/hal/quicklogic)
-list(APPEND kconfig_env_dirs ZEPHYR_HAL_REALTEK_MODULE_DIR=C:/Users/MichaelDesrosiers/zephyrproject/modules/hal/realtek)
 list(APPEND kconfig_env_dirs ZEPHYR_HAL_RENESAS_MODULE_DIR=C:/Users/MichaelDesrosiers/zephyrproject/modules/hal/renesas)
 list(APPEND kconfig_env_dirs ZEPHYR_HAL_RPI_PICO_MODULE_DIR=C:/Users/MichaelDesrosiers/zephyrproject/modules/hal/rpi_pico)
 list(APPEND kconfig_env_dirs ZEPHYR_HAL_SIFLI_MODULE_DIR=C:/Users/MichaelDesrosiers/zephyrproject/modules/hal/sifli)

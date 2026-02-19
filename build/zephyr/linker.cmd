@@ -2,9 +2,9 @@
 _region_min_align = 32;
 MEMORY
     {
-    FLASH (rx) : ORIGIN = (0x8000000 + 0x0), LENGTH = (1024 * 1024 - 0x0 - 0x0)
-    RAM (wx) : ORIGIN = 0x20000000, LENGTH = (96 * 1K)
-    SRAM0 ( rw ) : ORIGIN = (536870912), LENGTH = (98304) SRAM1 ( rw ) : ORIGIN = (268435456), LENGTH = (32768)
+    FLASH (rx) : ORIGIN = (0x0 + 0x0), LENGTH = (1428 * 1024 - 0x0 - 0x0)
+    RAM (wx) : ORIGIN = 0x20000000, LENGTH = (184 * 1K)
+    RetainedMem ( rw ) : ORIGIN = (537059328), LENGTH = (4096)
     IDT_LIST (wx) : ORIGIN = 0xFFFF7FFF, LENGTH = 32K
     }
 ENTRY("__start")
@@ -41,7 +41,7 @@ SECTIONS
  *(.iplt)
  }
    
- __rom_region_start = (0x8000000 + 0x0);
+ __rom_region_start = (0x0 + 0x0);
     rom_start :
  {
 HIDDEN(__rom_start_address = .);
@@ -49,7 +49,7 @@ FILL(0x00);
 . += 0x0 - (. - __rom_start_address);
 . = ALIGN(4);
 . = ALIGN( 1 << LOG2CEIL(4 * 32) );
-. = ALIGN( 1 << LOG2CEIL(4 * (16 + 82)) );
+. = ALIGN( 1 << LOG2CEIL(4 * (16 + 271)) );
 _vector_start = .;
 KEEP(*(.exc_vector_table))
 KEEP(*(".exc_vector_table.*"))
@@ -115,7 +115,6 @@ __device_deps_end = .;
  } > FLASH
 flash_driver_api_area : { _flash_driver_api_list_start = .; KEEP(*(SORT_BY_NAME(._flash_driver_api.static.*))); _flash_driver_api_list_end = .;; } > FLASH
 gpio_driver_api_area : { _gpio_driver_api_list_start = .; KEEP(*(SORT_BY_NAME(._gpio_driver_api.static.*))); _gpio_driver_api_list_end = .;; } > FLASH
-reset_driver_api_area : { _reset_driver_api_list_start = .; KEEP(*(SORT_BY_NAME(._reset_driver_api.static.*))); _reset_driver_api_list_end = .;; } > FLASH
 spi_driver_api_area : { _spi_driver_api_list_start = .; KEEP(*(SORT_BY_NAME(._spi_driver_api.static.*))); _spi_driver_api_list_end = .;; } > FLASH
 shared_irq_driver_api_area : { _shared_irq_driver_api_list_start = .; KEEP(*(SORT_BY_NAME(._shared_irq_driver_api.static.*))); _shared_irq_driver_api_list_end = .;; } > FLASH
 crypto_driver_api_area : { _crypto_driver_api_list_start = .; KEEP(*(SORT_BY_NAME(._crypto_driver_api.static.*))); _crypto_driver_api_list_end = .;; } > FLASH
@@ -168,13 +167,13 @@ ptp_clock_driver_api_area : { _ptp_clock_driver_api_list_start = .; KEEP(*(SORT_
 pwm_driver_api_area : { _pwm_driver_api_list_start = .; KEEP(*(SORT_BY_NAME(._pwm_driver_api.static.*))); _pwm_driver_api_list_end = .;; } > FLASH
 regulator_parent_driver_api_area : { _regulator_parent_driver_api_list_start = .; KEEP(*(SORT_BY_NAME(._regulator_parent_driver_api.static.*))); _regulator_parent_driver_api_list_end = .;; } > FLASH
 regulator_driver_api_area : { _regulator_driver_api_list_start = .; KEEP(*(SORT_BY_NAME(._regulator_driver_api.static.*))); _regulator_driver_api_list_end = .;; } > FLASH
+reset_driver_api_area : { _reset_driver_api_list_start = .; KEEP(*(SORT_BY_NAME(._reset_driver_api.static.*))); _reset_driver_api_list_end = .;; } > FLASH
 retained_mem_driver_api_area : { _retained_mem_driver_api_list_start = .; KEEP(*(SORT_BY_NAME(._retained_mem_driver_api.static.*))); _retained_mem_driver_api_list_end = .;; } > FLASH
 rtc_driver_api_area : { _rtc_driver_api_list_start = .; KEEP(*(SORT_BY_NAME(._rtc_driver_api.static.*))); _rtc_driver_api_list_end = .;; } > FLASH
 sdhc_driver_api_area : { _sdhc_driver_api_list_start = .; KEEP(*(SORT_BY_NAME(._sdhc_driver_api.static.*))); _sdhc_driver_api_list_end = .;; } > FLASH
 sensor_driver_api_area : { _sensor_driver_api_list_start = .; KEEP(*(SORT_BY_NAME(._sensor_driver_api.static.*))); _sensor_driver_api_list_end = .;; } > FLASH
 smbus_driver_api_area : { _smbus_driver_api_list_start = .; KEEP(*(SORT_BY_NAME(._smbus_driver_api.static.*))); _smbus_driver_api_list_end = .;; } > FLASH
 stepper_driver_api_area : { _stepper_driver_api_list_start = .; KEEP(*(SORT_BY_NAME(._stepper_driver_api.static.*))); _stepper_driver_api_list_end = .;; } > FLASH
-stepper_drv_driver_api_area : { _stepper_drv_driver_api_list_start = .; KEEP(*(SORT_BY_NAME(._stepper_drv_driver_api.static.*))); _stepper_drv_driver_api_list_end = .;; } > FLASH
 syscon_driver_api_area : { _syscon_driver_api_list_start = .; KEEP(*(SORT_BY_NAME(._syscon_driver_api.static.*))); _syscon_driver_api_list_end = .;; } > FLASH
 tee_driver_api_area : { _tee_driver_api_list_start = .; KEEP(*(SORT_BY_NAME(._tee_driver_api.static.*))); _tee_driver_api_list_end = .;; } > FLASH
 video_driver_api_area : { _video_driver_api_list_start = .; KEEP(*(SORT_BY_NAME(._video_driver_api.static.*))); _video_driver_api_list_end = .;; } > FLASH
@@ -269,13 +268,9 @@ ztest :
  *(.gnu.linkonce.r.*)
  . = ALIGN(4);
  } > FLASH
- PROVIDE(__eh_frame_start = 0);
- PROVIDE(__eh_frame_end = 0);
- PROVIDE(__eh_frame_hdr_start = 0);
- PROVIDE(__eh_frame_hdr_end = 0);
  /DISCARD/ : { *(.eh_frame) }
  __rodata_region_end = .;
- . = ALIGN(_region_min_align); . = ALIGN( 1 << LOG2CEIL(__rodata_region_end - ADDR(rom_start)));
+ . = ALIGN(_region_min_align);
  __rom_region_end = __rom_region_start + . - ADDR(rom_start);
  __rom_region_size = __rom_region_end - __rom_region_start;
    
@@ -292,11 +287,11 @@ ztest :
 .ramfunc : ALIGN_WITH_INPUT
 {
  __ramfunc_region_start = .;
- . = ALIGN(_region_min_align); . = ALIGN( 1 << LOG2CEIL(__ramfunc_size));
+ . = ALIGN(_region_min_align);
  __ramfunc_start = .;
  *(.ramfunc)
  *(".ramfunc.*")
- . = ALIGN(_region_min_align); . = ALIGN( 1 << LOG2CEIL(__ramfunc_size));
+ . = ALIGN(_region_min_align);
  __ramfunc_end = .;
 } > RAM AT > FLASH
 __ramfunc_size = __ramfunc_end - __ramfunc_start;
@@ -344,6 +339,7 @@ __ramfunc_load_start = LOADADDR(.ramfunc);
  sys_mem_blocks_ptr_area : ALIGN_WITH_INPUT { _sys_mem_blocks_ptr_list_start = .; *(SORT_BY_NAME(._sys_mem_blocks_ptr.static.*)); _sys_mem_blocks_ptr_list_end = .;; } > RAM AT > FLASH
  net_buf_pool_area : ALIGN_WITH_INPUT { _net_buf_pool_list_start = .; KEEP(*(SORT_BY_NAME(._net_buf_pool.static.*))); _net_buf_pool_list_end = .;; } > RAM AT > FLASH
     __data_region_end = .;
+PROVIDE(soc_reset_hook = SystemInit);
 /DISCARD/ :
 {
  KEEP(*(.irq_info*))
@@ -390,7 +386,7 @@ __ramfunc_load_start = LOADADDR(.ramfunc);
  KEEP(*(.ARM.attributes))
  KEEP(*(.gnu.attributes))
  }
-    SRAM0 (NOLOAD) : { __SRAM0_start = .; KEEP(*(SRAM0)) KEEP(*(SRAM0.*)) __SRAM0_end = .; } > SRAM0 __SRAM0_size = __SRAM0_end - __SRAM0_start; __SRAM0_load_start = LOADADDR(SRAM0); SRAM1 (NOLOAD) : { __SRAM1_start = .; KEEP(*(SRAM1)) KEEP(*(SRAM1.*)) __SRAM1_end = .; } > SRAM1 __SRAM1_size = __SRAM1_end - __SRAM1_start; __SRAM1_load_start = LOADADDR(SRAM1);
+    RetainedMem (NOLOAD) : { __RetainedMem_start = .; KEEP(*(RetainedMem)) KEEP(*(RetainedMem.*)) __RetainedMem_end = .; } > RetainedMem __RetainedMem_size = __RetainedMem_end - __RetainedMem_start; __RetainedMem_load_start = LOADADDR(RetainedMem);
 .last_section :
 {
   KEEP(*(.last_section))
@@ -412,7 +408,7 @@ noinit (NOLOAD) :
         *(.noinit)
         *(".noinit.*")
 } > RAM AT > RAM
-    __kernel_ram_end = 0x20000000 + (96 * 1K);
+    __kernel_ram_end = 0x20000000 + (184 * 1K);
     __kernel_ram_size = __kernel_ram_end - __kernel_ram_start;
     .last_ram_section (NOLOAD) :
     {

@@ -8,6 +8,7 @@ C:/Users/MichaelDesrosiers/zephyrproject/zephyr/include\zephyr\bluetooth
 C:/Users/MichaelDesrosiers/zephyrproject/zephyr/include\zephyr\canbus
 C:/Users/MichaelDesrosiers/zephyrproject/zephyr/include\zephyr\console
 C:/Users/MichaelDesrosiers/zephyrproject/zephyr/include\zephyr\cpu_freq
+C:/Users/MichaelDesrosiers/zephyrproject/zephyr/include\zephyr\cpu_load
 C:/Users/MichaelDesrosiers/zephyrproject/zephyr/include\zephyr\crypto
 C:/Users/MichaelDesrosiers/zephyrproject/zephyr/include\zephyr\data
 C:/Users/MichaelDesrosiers/zephyrproject/zephyr/include\zephyr\debug
@@ -20,10 +21,10 @@ C:/Users/MichaelDesrosiers/zephyrproject/zephyr/include\zephyr\dt-bindings
 C:/Users/MichaelDesrosiers/zephyrproject/zephyr/include\zephyr\fs
 C:/Users/MichaelDesrosiers/zephyrproject/zephyr/include\zephyr\gnss
 C:/Users/MichaelDesrosiers/zephyrproject/zephyr/include\zephyr\input
-C:/Users/MichaelDesrosiers/zephyrproject/zephyr/include\zephyr\instrumentation
 C:/Users/MichaelDesrosiers/zephyrproject/zephyr/include\zephyr\internal
 C:/Users/MichaelDesrosiers/zephyrproject/zephyr/include\zephyr\ipc
 C:/Users/MichaelDesrosiers/zephyrproject/zephyr/include\zephyr\kernel
+C:/Users/MichaelDesrosiers/zephyrproject/zephyr/include\zephyr\libsbc
 C:/Users/MichaelDesrosiers/zephyrproject/zephyr/include\zephyr\linker
 C:/Users/MichaelDesrosiers/zephyrproject/zephyr/include\zephyr\llext
 C:/Users/MichaelDesrosiers/zephyrproject/zephyr/include\zephyr\logging
@@ -107,7 +108,6 @@ C:/Users/MichaelDesrosiers/zephyrproject/zephyr/include\zephyr\drivers\clock_con
 C:/Users/MichaelDesrosiers/zephyrproject/zephyr/include\zephyr\drivers\comparator
 C:/Users/MichaelDesrosiers/zephyrproject/zephyr/include\zephyr\drivers\console
 C:/Users/MichaelDesrosiers/zephyrproject/zephyr/include\zephyr\drivers\dac
-C:/Users/MichaelDesrosiers/zephyrproject/zephyr/include\zephyr\drivers\debug
 C:/Users/MichaelDesrosiers/zephyrproject/zephyr/include\zephyr\drivers\disk
 C:/Users/MichaelDesrosiers/zephyrproject/zephyr/include\zephyr\drivers\dma
 C:/Users/MichaelDesrosiers/zephyrproject/zephyr/include\zephyr\drivers\edac
@@ -139,7 +139,6 @@ C:/Users/MichaelDesrosiers/zephyrproject/zephyr/include\zephyr\drivers\power
 C:/Users/MichaelDesrosiers/zephyrproject/zephyr/include\zephyr\drivers\psi5
 C:/Users/MichaelDesrosiers/zephyrproject/zephyr/include\zephyr\drivers\pwm
 C:/Users/MichaelDesrosiers/zephyrproject/zephyr/include\zephyr\drivers\regulator
-C:/Users/MichaelDesrosiers/zephyrproject/zephyr/include\zephyr\drivers\reset
 C:/Users/MichaelDesrosiers/zephyrproject/zephyr/include\zephyr\drivers\retained_mem
 C:/Users/MichaelDesrosiers/zephyrproject/zephyr/include\zephyr\drivers\rtc
 C:/Users/MichaelDesrosiers/zephyrproject/zephyr/include\zephyr\drivers\sensor
@@ -161,6 +160,7 @@ C:/Users/MichaelDesrosiers/zephyrproject/zephyr/include\zephyr\drivers\firmware\
 C:/Users/MichaelDesrosiers/zephyrproject/zephyr/include\zephyr\drivers\firmware\scmi\nxp
 C:/Users/MichaelDesrosiers/zephyrproject/zephyr/include\zephyr\drivers\i2c\target
 C:/Users/MichaelDesrosiers/zephyrproject/zephyr/include\zephyr\drivers\mic_privacy\intel
+C:/Users/MichaelDesrosiers/zephyrproject/zephyr/include\zephyr\drivers\misc\coresight
 C:/Users/MichaelDesrosiers/zephyrproject/zephyr/include\zephyr\drivers\misc\devmux
 C:/Users/MichaelDesrosiers/zephyrproject/zephyr/include\zephyr\drivers\misc\flexram
 C:/Users/MichaelDesrosiers/zephyrproject/zephyr/include\zephyr\drivers\misc\ft8xx
@@ -170,7 +170,6 @@ C:/Users/MichaelDesrosiers/zephyrproject/zephyr/include\zephyr\drivers\misc\nxp_
 C:/Users/MichaelDesrosiers/zephyrproject/zephyr/include\zephyr\drivers\misc\nxp_rtxxx_dsp_ctrl
 C:/Users/MichaelDesrosiers/zephyrproject/zephyr/include\zephyr\drivers\misc\pio_rpi_pico
 C:/Users/MichaelDesrosiers/zephyrproject/zephyr/include\zephyr\drivers\misc\renesas_ra_external_interrupt
-C:/Users/MichaelDesrosiers/zephyrproject/zephyr/include\zephyr\drivers\misc\renesas_rx_dtc
 C:/Users/MichaelDesrosiers/zephyrproject/zephyr/include\zephyr\drivers\misc\renesas_rx_external_interrupt
 C:/Users/MichaelDesrosiers/zephyrproject/zephyr/include\zephyr\drivers\misc\stm32_wkup_pins
 C:/Users/MichaelDesrosiers/zephyrproject/zephyr/include\zephyr\drivers\misc\timeaware_gpio
@@ -230,7 +229,6 @@ C:/Users/MichaelDesrosiers/zephyrproject/zephyr/include\zephyr\dt-bindings\misc\
 C:/Users/MichaelDesrosiers/zephyrproject/zephyr/include\zephyr\dt-bindings\pinctrl\renesas
 C:/Users/MichaelDesrosiers/zephyrproject/zephyr/include\zephyr\dt-bindings\pinctrl\silabs
 C:/Users/MichaelDesrosiers/zephyrproject/zephyr/include\zephyr\gnss\rtk
-C:/Users/MichaelDesrosiers/zephyrproject/zephyr/include\zephyr\ipc\backends
 C:/Users/MichaelDesrosiers/zephyrproject/zephyr/include\zephyr\kernel\internal
 C:/Users/MichaelDesrosiers/zephyrproject/zephyr/include\zephyr\kernel\mm
 C:/Users/MichaelDesrosiers/zephyrproject/zephyr/include\zephyr\linker\common-rom

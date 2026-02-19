@@ -66,9 +66,11 @@ osource "C:/Users/MichaelDesrosiers/zephyrproject/modules/hal/espressif/zephyr/K
 config ZEPHYR_HAL_ESPRESSIF_MODULE
 	bool
 	default y
+	select TAINT_BLOBS
 
 config ZEPHYR_HAL_ESPRESSIF_MODULE_BLOBS
 	bool
+	default y
 endmenu
 menu "hal_ethos_u (C:/Users/MichaelDesrosiers/zephyrproject/modules/hal/ethos_u)"
 osource "$(ZEPHYR_HAL_ETHOS_U_KCONFIG)"
@@ -127,15 +129,6 @@ config ZEPHYR_OPENISA_MODULE
 config ZEPHYR_QUICKLOGIC_MODULE
 	bool
 	default y
-menu "hal_realtek (C:/Users/MichaelDesrosiers/zephyrproject/modules/hal/realtek)"
-osource "C:/Users/MichaelDesrosiers/zephyrproject/modules/hal/realtek/Kconfig"
-config ZEPHYR_HAL_REALTEK_MODULE
-	bool
-	default y
-
-config ZEPHYR_HAL_REALTEK_MODULE_BLOBS
-	bool
-endmenu
 config ZEPHYR_HAL_RENESAS_MODULE
 	bool
 	default y
@@ -153,9 +146,6 @@ osource "$(ZEPHYR_HAL_SIFLI_KCONFIG)"
 config ZEPHYR_HAL_SIFLI_MODULE
 	bool
 	default y
-
-config ZEPHYR_HAL_SIFLI_MODULE_BLOBS
-	bool
 endmenu
 menu "hal_silabs (C:/Users/MichaelDesrosiers/zephyrproject/modules/hal/silabs)"
 osource "$(ZEPHYR_HAL_SILABS_KCONFIG)"

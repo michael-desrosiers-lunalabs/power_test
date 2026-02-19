@@ -32,7 +32,6 @@ linker_zephyr_pre0.cmd: \
  C:/Users/MichaelDesrosiers/zephyrproject/zephyr/include/zephyr/devicetree/mbox.h \
  C:/Users/MichaelDesrosiers/zephyrproject/zephyr/include/zephyr/devicetree/port-endpoint.h \
  C:/Users/MichaelDesrosiers/zephyrproject/zephyr/include/zephyr/devicetree/display.h \
- C:/Users/MichaelDesrosiers/zephyrproject/zephyr/include/zephyr/devicetree/hwspinlock.h \
  C:/Users/MichaelDesrosiers/zephyrproject/zephyr/include/zephyr/linker/devicetree_regions.h \
  C:/Users/MichaelDesrosiers/zephyrproject/zephyr/include/zephyr/linker/linker-defs.h \
  C:/Users/MichaelDesrosiers/zephyrproject/zephyr/include/zephyr/toolchain/common.h \
@@ -43,7 +42,6 @@ linker_zephyr_pre0.cmd: \
  C:/Users/MichaelDesrosiers/zephyrproject/zephyr/include/zephyr/kernel/internal/mm.h \
  C:/Users/MichaelDesrosiers/zephyrproject/zephyr/include/zephyr/linker/linker-devnull.h \
  C:/Users/MichaelDesrosiers/zephyrproject/zephyr/include/zephyr/linker/rel-sections.ld \
- C:/Users/MichaelDesrosiers/zephyrproject/zephyr/include/zephyr/linker/llext-sections.ld \
  C:/Users/MichaelDesrosiers/zephyrproject/zephyr/power_test/build/zephyr/include/generated/snippets-rom-start.ld \
  c:\users\michaeldesrosiers\zephyrproject\zephyr\arch\common\rom_start_address.ld \
  c:\users\michaeldesrosiers\zephyrproject\zephyr\arch\common\fill_with_zeros.ld \
@@ -80,6 +78,7 @@ linker_zephyr_pre0.cmd: \
  C:/Users/MichaelDesrosiers/zephyrproject/zephyr/include/zephyr/linker/cplusplus-ram.ld \
  C:/Users/MichaelDesrosiers/zephyrproject/zephyr/power_test/build/zephyr/include/generated/snippets-data-sections.ld \
  C:/Users/MichaelDesrosiers/zephyrproject/zephyr/power_test/build/zephyr/include/generated/snippets-sections.ld \
+ c:\users\michaeldesrosiers\zephyrproject\zephyr\soc\nordic\common\platform_init.ld \
  C:/Users/MichaelDesrosiers/zephyrproject/zephyr/include/zephyr/linker/intlist.ld \
  C:/Users/MichaelDesrosiers/zephyrproject/zephyr/include/zephyr/linker/debug-sections.ld \
  C:/Users/MichaelDesrosiers/zephyrproject/zephyr/include/zephyr/linker/common-noinit.ld \

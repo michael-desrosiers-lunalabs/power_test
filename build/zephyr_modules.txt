@@ -20,7 +20,6 @@
 "hal_nxp":"C:/Users/MichaelDesrosiers/zephyrproject/modules/hal/nxp":"${ZEPHYR_HAL_NXP_CMAKE_DIR}"
 "openisa":"C:/Users/MichaelDesrosiers/zephyrproject/modules/hal/openisa":"C:/Users/MichaelDesrosiers/zephyrproject/modules/hal/openisa"
 "quicklogic":"C:/Users/MichaelDesrosiers/zephyrproject/modules/hal/quicklogic":"C:/Users/MichaelDesrosiers/zephyrproject/modules/hal/quicklogic"
-"hal_realtek":"C:/Users/MichaelDesrosiers/zephyrproject/modules/hal/realtek":"C:/Users/MichaelDesrosiers/zephyrproject/modules/hal/realtek"
 "hal_renesas":"C:/Users/MichaelDesrosiers/zephyrproject/modules/hal/renesas":"C:/Users/MichaelDesrosiers/zephyrproject/modules/hal/renesas"
 "hal_rpi_pico":"C:/Users/MichaelDesrosiers/zephyrproject/modules/hal/rpi_pico":"${ZEPHYR_HAL_RPI_PICO_CMAKE_DIR}"
 "hal_sifli":"C:/Users/MichaelDesrosiers/zephyrproject/modules/hal/sifli":"${ZEPHYR_HAL_SIFLI_CMAKE_DIR}"
