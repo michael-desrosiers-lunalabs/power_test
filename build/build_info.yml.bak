@@ -1,5 +1,0 @@
-west:
-  command: C:\Users\MichaelDesrosiers\zephyrproject\.venv\Scripts\west build -p always
-    -b nrf54l15dk/nrf54l15/cpuapp .
-  topdir: C:\Users\MichaelDesrosiers\zephyrproject
-  version: 1.5.0
